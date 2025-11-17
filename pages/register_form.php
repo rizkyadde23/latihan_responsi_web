@@ -58,7 +58,7 @@
 
                 <p class="text-center mt-3 mb-0">
                     Already have an account?
-                    <a href="login_form.php" class="text-decoration-none">Login</a>
+                    <a href="index.php" class="text-decoration-none">Login</a>
                 </p>
 
             </form>

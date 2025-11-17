@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$hashed', 'user')";
+    $query = "INSERT INTO users (username, email, password, role) VALUES ('$name', '$email', '$hashed', 'user')";
 
     if (mysqli_query($conn, $query)) {
         $_SESSION['success'] = "Registrasi berhasil! Silakan login.";
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['error'] = "Gagal registrasi: " . mysqli_error($conn);
     }
 
-    header("Location: pages/register_form.php");
+    header("Location: pages/login_form.php");
     exit();
 }
 ?>

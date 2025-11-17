@@ -17,8 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_email'] = $row['email'];
+            $_SESSION['role'] = $row['role'];
+            $_SESSION['name'] = $row['username'];
 
-            header("Location: dashboard.php");
+            header("Location: pages/index.php");
             exit();
         } else {
             $_SESSION['error'] = "Password salah";
@@ -27,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $_SESSION['error'] = "Email tidak ditemukan";
     }
-
-    header("Location: pages/login_form.php");
+    header("Location: pages/index.php");
     exit();
 }
 ?>
