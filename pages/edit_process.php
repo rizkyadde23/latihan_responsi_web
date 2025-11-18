@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               WHERE id = $id";
 
     if (mysqli_query($conn, $query)) {
-        header("Location: flight_list.php?status=updated");
+        header("Location: index.php");
         exit;
     } else {
         echo "Error updating data: " . mysqli_error($conn);

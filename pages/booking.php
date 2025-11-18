@@ -31,7 +31,7 @@ if (mysqli_query($conn, $query)) {
         WHERE id = '$flight_id'
     ");
 
-    header("Location: index.php?success=1");
+    header("Location: index.php");
     exit;
 
 } else {

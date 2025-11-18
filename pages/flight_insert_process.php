@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ('$flight_code', '$origin', '$destination', '$depart_time', '$arrival_time', '$price', '$seats_total', '$seats_available', NOW())";
 
     if (mysqli_query($conn, $query)) {
-        header("Location: flight_list.php?status=success");
+        header("Location: index.php");
         exit;
     } else {
         echo "Error inserting data: " . mysqli_error($conn);

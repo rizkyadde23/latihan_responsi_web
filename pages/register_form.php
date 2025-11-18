@@ -35,7 +35,7 @@
             <form action="../register.php" method="POST" class="mt-3">
 
                 <div class="mb-3">
-                    <label class="form-label">Full Name</label>
+                    <label class="form-label">Username</label>
                     <input type="text" name="name" class="form-control" required>
                 </div>
 

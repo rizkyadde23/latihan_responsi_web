@@ -3,18 +3,20 @@ include '../auth.php';
 include '../connection.php';
 include '../components/navbar.php';
 
+// Cek admin
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: index.php?error=forbidden");
+    header("Location: index.php");
     exit;
 }
 
-
+// Pastikan id dikirim lewat GET
 if (!isset($_GET['id'])) {
-    header("Location: flight_list.php");
+    header("Location: index.php");
     exit;
 }
 
-$id = $_GET['id'];
+$id = intval($_GET['id']); // lebih aman
+
 $query = mysqli_query($conn, "SELECT * FROM flights WHERE id = $id");
 
 if (mysqli_num_rows($query) == 0) {
@@ -102,7 +104,8 @@ $flight = mysqli_fetch_assoc($query);
                     </div>
 
                     <button type="submit" class="btn btn-warning">Update Flight</button>
-                    <a href="flight_list.php" class="btn btn-secondary">Back</a>
+                    <a href="index.php" class="btn btn-secondary">Back</a>
+
                 </form>
             </div>
         </div>

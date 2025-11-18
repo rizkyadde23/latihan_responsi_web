@@ -155,8 +155,13 @@ $allBookingsQuery = mysqli_query($conn, "
                             Seats: <?= $f['seats_available'] ?>/<?= $f['seats_total'] ?><br>
                             Price: <strong>Rp<?= number_format($f['price']) ?></strong>
                         </p>
-                        <a href="edit_flight.php?id=<?= $f['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="delete_flight.php?id=<?= $f['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="flight_edit.php?id=<?= $f['id'] ?>" class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+                        <a href="delete_flight.php?id=<?= $f['id'] ?>" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Are you sure want to delete this flight?')">
+                            Delete
+                        </a>
                     </div>
                 </div>
             </div>
