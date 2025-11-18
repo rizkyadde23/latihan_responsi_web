@@ -27,4 +27,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     header("Location: flight_insert.php");
     exit;
-}
+}?>
